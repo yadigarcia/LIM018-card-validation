@@ -1,14 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Tarjeta de crédito válida</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Kannada&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <header>
+
+    <nav>
+       <img id="imglogo" src="imagenes/logo.jpg" alt="Canipets">
+       <div id="navegador">
+         <input id="buscador" type="seach" placeholder="Busca tu marca preferida">
+         <a href="index.html"> Inicio</a>
+         <a href="locales.html"> Locales </a>
+         <a href="pay.html"><button type="button" id="btnCarrito"> <img src="imagenes/carrito.png" alt="Canipets" id="imgcarrito"></button></a>
+       </div>
+
+    </nav>
+  </header>
+
+  <main>
+
+  <section id="sectionProduct">
+         
+      <div class="divProduct"> 
+         <img class="producto" src="imagenes/Canbocachorro.jpg" alt="Canbo Cachorro">
+         <p>Canbo Cachorro</p>
+         <p>s/. 220</p> 
+         <button> Lo Quiero</button>
+      </div>
+
+      <div class="divProduct"> 
+         <img class="producto" src="imagenes/canboadulto.jpg" alt="Canbo Adulto"><br>
+         <p>Canbo Adulto</p>
+         <p>s/. 230</p>
+         <button> Lo Quiero</button>
+      </div>
+
+      <div class="divProduct"> 
+         <img class="producto" src="imagenes/pedigreecachorro.jpg" alt="Pedigree Cachorro">
+         <p>Pedigree Cachorro</p>
+         <p>s/. 180</p>
+         <button> Lo Quiero</button>
+      </div>
+
+      <div class="divProduct">  
+         <img class="producto" src="imagenes/pedigreeadulto.jpg" alt="Pedigree Adulto">
+         <p>Pedigree Adulto</p>
+         <p>s/. 180</p>
+         <button> Lo Quiero</button>
+      </div>
+
+  </section>
+
+</main>
+  <footer>
+    <div id="footer">
+        <ul>
+          <li>Terminos y condiciones</li>
+          <li>Acerca de Canipets </li>
+          <li>Contactanos</li>
+          <a id="libroreclamciones" href="https://indecopi.gob.pe/libro-de-reclamaciones"> <img src="imagenes/libroreclamaciones.PNG"></a>
+        </ul>
+
+    </div>
+
+
+  </footer>
+
     <script src="index.js" type="module"></script>
-  </body>
+</body>
 </html>

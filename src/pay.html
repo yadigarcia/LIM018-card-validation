@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tiro+Kannada&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <title>Tarjeta de crédito válida</title>
+  <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+  <header>
+
+    <nav>
+       <img id="imglogo" src="imagenes/logo.jpg" alt="Canipets">
+       <div id="navegador">
+         <input id="buscador" type="seach" placeholder="Busca tu marca preferida">
+         <a href="index.html"> Inicio</a>
+         <a href="locales.html"> Locales </a>
+         <a href="pay.html"><button type="button" id="btnCarrito"> <img src="imagenes/carrito.png" alt="Canipets" id="imgcarrito"></button></a>
+       </div>
+
+    </nav>
+  </header>
+
+     <main>
+        <section id="sectionPay">
+         <form id="inputPay">
+
+             <div class="logopago">
+                 <img src="imagenes/logo.jpg" alt="Canipets">
+             </div>
+
+             <input id="creditCardNumber"  type="text" autocomplete="off" maxlength="16" minlength="16" placeholder="Ingresa tu numero de tarjeta" required><br>
+             <input type="text" placeholder="MM/AA">
+             <input type="text" maxlength="3" placeholder="CVV"><br>
+             <input type="text" placeholder="Nombre">
+             <input type="text" placeholder="Apellido"><br>
+             <input class="email" type="email" placeholder="Email"><br>
+             <button type="button" id="btnPay" > PAGAR </button>
+
+             <div class="visa">
+                 <img src="imagenes/tarjetas.png" alt="medio de pago">
+             </div>
+
+         </form>
+        </section>
+     </main>
+
+<footer>
+    <div id="footer">
+         <ul>
+         <li>Terminos y condiciones</li>
+         <li>Acerca de Canipets </li>
+         <li>Contactanos</li>
+         <a id="libroreclamciones" href="https://indecopi.gob.pe/libro-de-reclamaciones"> <img src="imagenes/libroreclamaciones.PNG"></a>
+        </ul>
+
+     </div>
+
+</footer>
+
+  <script src="index.js" type="module"></script>
+</body>
+</html>
