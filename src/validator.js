@@ -1,42 +1,52 @@
 const validator = {
   // ...
 
-isValid: function (creditCardNumber) {
+  isValid: function (creditCardNumber) {
 
     const numberReverse =creditCardNumber.toString().split("").reverse().join("");
     let addNumber = 0 ;
     
 
-     for (let i = 0; i < numberReverse.length; i++){
+    for (let i = 0; i < numberReverse.length; i++){
       let digit=parseInt(numberReverse[i]);
-         if(i % 2 == 0){
-           if((digit *=2) > 9){
-             digit -= 9;
-           }
-         }
+        if(i % 2 == 1){
+          if((digit *=2) > 9){
+            digit -= 9;
+          }
+        }
           addNumber += digit;
           }
         return addNumber % 10 === 0 ;
-     }
+ },
+      
+  maskify: function(creditCardNumber){
     
- , maskify: function(creditCardNumber){
-    let encriptNumber;//creditcardNumber con #
-    let newArrayNumber= [];
+      //separrar array con split
+      let  newString = creditCardNumber.split("");
+      //console.log(newString);
 
-    //separrar array
-    let  arrayNumber = creditCardNumber.split("");
-      
-     arrayNumber.forEach((element, i) => { 
-      if (i < arrayNumber.length - 4 ){ 
-        element = "#";
-      }
-      
-     // utilizar push para agregar digit al array vacio
-      newArrayNumber.push(element);
-      encriptNumber= arrayNumber.join("");
-    });
-   return encriptNumber;
+    //desde el final,para extraer los ultios 4 digitos de array
+
+    let lastFourDigit = newString.slice(-4);
+    
+  // extraer desde el inicio hasta antes de los 4 digitios finales
+
+      let newDigit= newString.slice(0,-4);
+      newDigit.map((e, index) => {
+      newDigit[index] = "#";
+      });
+     return newDigit.join("") + lastFourDigit.join("");
+       
+
+
+    
   }
 };
 
+
+
+
+
+ 
+ 
 export default validator;
