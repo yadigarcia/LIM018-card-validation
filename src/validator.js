@@ -5,18 +5,20 @@ const validator = {
 
     const numberReverse =creditCardNumber.toString().split("").reverse().join("");
     let addNumber = 0 ;
-    
 
-    for (let i = 0; i < numberReverse.length; i++){
-      let digit=parseInt(numberReverse[i]);
-        if(i % 2 == 1){
-          if((digit *=2) > 9){
-            digit -= 9;
+    if(creditCardNumber.length > 0){
+      for (let i = 0; i < numberReverse.length; i++){
+
+        let digit=parseInt(numberReverse[i]);
+          if(i % 2 == 1){
+            if((digit *=2) > 9){
+              digit -= 9;
+            }
           }
+            addNumber += digit;
         }
-          addNumber += digit;
-          }
-        return addNumber % 10 === 0 ;
+          return addNumber % 10 === 0 ;
+    }
  },
       
   maskify: function(creditCardNumber){
@@ -28,6 +30,7 @@ const validator = {
     //desde el final,para extraer los ultios 4 digitos de array
 
     let lastFourDigit = newString.slice(-4);
+      
     
   // extraer desde el inicio hasta antes de los 4 digitios finales
 
@@ -36,9 +39,7 @@ const validator = {
       newDigit[index] = "#";
       });
      return newDigit.join("") + lastFourDigit.join("");
-       
-
-
+          
     
   }
 };

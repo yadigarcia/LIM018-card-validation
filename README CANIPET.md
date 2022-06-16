@@ -263,17 +263,23 @@ Debe contener lo siguiente:
 En este proyecto se construyo una aplicación web que le permite al usuario validar el número de su tarjeta de crédito. Además, tiene que implementar funcionalidad para ocultar todos los dígitos de una tarjeta menos
 los últimos cuatro.
 
-La temática esta basada en la experiencia de usuario para lacompra de alimento para  en el cual se escogio cuatro poductos fuertemente conocidos como son la marca Cambo y Pedigree en sus presentaciones para adulto y cachorro. el diseño de la pagina se creo con la finalidad de ser amigable al usurio y facil de usar.
+La temática esta basada en la experiencia de usuario para la compra de alimento para  en el cual se escogio cuatro poductos fuertemente conocidos como son la marca Cambo y Pedigree en sus presentaciones para adulto y cachorro. el diseño de la pagina se creo con la finalidad de ser amigable al usurio y facil de usar.
 
 * La imagen final de tu proyecto.
 
-La imagen final es la presentacion de 4 productos para que elusuriopueda elegir y el carrito decompra que deriba a una ventana para ingresar el numero de tarjeta y proceder a validarla.
+La imagen final es la presentacion de 4 productos para que el usuriopueda elegir y el carrito decompra que deriba a una ventana para ingresar el numero de tarjeta y proceder a validarla.
 
 * Investigación UX:
 
   1. Explicar quiénes son los usuarios y los objetivos en relación con el
     producto.
-    Los usuarios son personas que desean comprar alimento balanceado para sus mascotas caninas.
+
+    Los usuarios son personas que desean comprar alimento balanceado para sus mascotas caninas en una pagina que le resulte facil de entender y facil de comprar.
+
+    Yo como: dueño de mascota canina
+    Quiero poder: visuaizar los productos a elgir sin que sea engorroso dirigirse a ellos.
+    Para: comprar alimento para mi mascota de forma facil y rapida.
+
 
   2. Explicar cómo el producto soluciona los problemas/necesidades de dichos
     usuarios.
@@ -282,38 +288,40 @@ La imagen final es la presentacion de 4 productos para que elusuriopueda elegir 
 
   3. Luego colocarás la foto de tu primer prototipo en papel.
 
+   El primer prototipo se hizo en Figma, el cual sirvio de guia para el diseño de la pagina.
+
+  https://www.figma.com/file/RW9B7VmcmRTwyJa8bPFHfL/Untitled?node-id=12%3A7
+
   
   4. Agregar un resumen del feedback recibido indicando las mejoras a realizar.
+
   recibi feedback de Deysi, lo que me planteo es hacer un solo css en el proyecto y no uno por cada html como lo habia hecho. Tambien me explico la importancia de las llaves almomento de escribir mi codigo en js.
 
 
   5. Imagen del prototipo final.
 
+  El proyecto seencuentra en el repositorio de git.
+
+  https://github.com/yadigarcia/LIM018-card-validation   
 
 
 #### Visualmente (HTML y CSS)
 
-Deberás maquetar de forma exacta el prototipo final que hiciste en la herramienta
-de diseño de prototipos que escogiste utilizando HTML y CSS. En este momento elegirás
-los colores, tipo de fuente, etc a usar.
+Visualmente HTML y CSS fueron diseñados con la finalidad de que se asemeje a una pagina web con un esquema nirmal para facilitar la visualizacion del usuario.
+Los estilos CSS se esvogieron de tal manera que sea atrativo al momento de elegir el producto y que el fondo se familoiarice con el producto que se esta ofreciendo en la seccion pagar.
 
-A continuación describimos los archivos que utilizarás:
 
 ##### `src/index.html`
 
-En este archivo va el contenido que se mostrará al usuario (esqueleto HTML).
-Encontrarás 3 etiquetas iniciales, las cuales si deseas puedes borrar y empezar
-de cero:
+El index.html se siguio la estructura planteada.
 
-* `<header>`: encabezado de tu proyecto.
-* `<main>`: contenido principal de tu proyecto.
-* `<footer>`: pie de página de tu proyecto.
+* `<header>`: encabezado del proyecto.
+* `<main>`: contenido principal del proyecto.
+* `<footer>`: pie de página del proyecto.
 
 ##### `src/style.css`
 
-Este archivo debe contener las reglas de estilo. Queremos que escribas tus
-propias reglas, por eso NO está permitido el uso de frameworks de CSS
-(Bootstrap, materialize, etc).
+El estilo se utilizo de acuerdo a lo que se quria dar a percibir, para ello se empleo varias atributos que se encuentran src/#style.css
 
 #### Funcionalmente (JavaScript - pruebas unitarias)
 
@@ -326,50 +334,29 @@ indicamos qué harás en cada archivo:
 
 ##### `src/validator.js`
 
-Acá escribirás las funciones necesarias para que el usuario pueda verificar la
+Acá se escribio las funciones necesarias para que el usuario pueda verificar la
 tarjeta de crédito y ocultar los dígitos de su número de tarjeta.
 Esta función debe ser pura e independiente del DOM.
 
-Para esto debes implementar el **objeto `validator`**, el cual ya se encuentra
-_exportado_ en el _boilerplate_. Este objeto (`validator`) contiene
-dos métodos (`isValid` y `maskify`):
+* **`validator.isValid(creditCardNumber)`**: 
 
-* **`validator.isValid(creditCardNumber)`**: `creditCardNumber` es un `string`
-con el número de tarjeta que se va a verificar. Esta función debe retornar un
-`boolean` dependiendo si es válida de acuerdo al [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn).
+`creditCardNumber` se declaro como una variable que muestre el numero de tarjeta para despues realizar el algoritmo y poder validarla.
 
-* **`validator.maskify(creditCardNumber)`**: `creditCardNumber` es un `string` con
-el número de tarjeta y esta función debe retornar un `string` donde todos menos
-los últimos cuatro caracteres sean reemplazados por un numeral (`#`) o 🐱.
-Esta función deberá siempre mantener los últimos cuatro caracteres intactos, aún
+* **`validator.maskify(creditCardNumber)`**: 
+Aqui se realizo las funciones necesarias para que todos menos los últimos cuatro caracteres sean reemplazados por un numeral (`#`), manteniendo siempre  los últimos cuatro caracteres intactos, aún
 cuando el `string` sea de menor longitud.
 
-    Ejemplo de uso
-
-    ```js
-    maskify('4556364607935616') === '############5616'
-    maskify(     '64607935616') ===      '#######5616'
-    maskify(               '1') ===                '1'
-    maskify(               '')  ===                ''
-    ```
 
 ##### `src/index.js`
 
-Acá escribirás todo el código que tenga que ver con la interacción del DOM
-(seleccionar, actualizar y manipular elementos del DOM y eventos).
-Es decir, en este archivo deberás invocar las funciones `isValid` y `maskify`
-según sea necesario para actualizar el resultado en la pantalla (UI).
+Aqui se  escribio todo el código que interactuaba con del DOM, tales como:
+getElementById,addEventListener para poder interactuar la pagina.
+
+Tambien los se importo `isValid` y `maskify` para actualizar el resultado en la pantalla (UI).
 
 ##### `test/validator.spec.js`
+ Se realizo el tests para comprobar el codigo dando un resultado de 100%.
 
-En este archivo tendrás que completar las pruebas unitarias de las funciones
-`validator.isValid(creditCardNumber)` y `validator.maskify(creditCardNumber)`
-implementadas en `validator.js` utilizando [Jest](https://jestjs.io/es-ES/).
-Tus pruebas unitarias deben dar un 70% en _coverage_ (cobertura),
-_statements_ (sentencias), _functions_ (funciones) y _lines_ (líneas); y un
-mínimo del 50% de _branches_ (ramas).
-
-***
 
 ## 6. Pistas, tips y lecturas complementarias
 
